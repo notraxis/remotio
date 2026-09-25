@@ -18,8 +18,8 @@ export default function Home() {
           <div className="home-hero__content">
             <p className="eyebrow">Physiotherapie in Bewegung</p>
             <h1>
-              Bewegung, die
-              <span>zu dir passt.</span>
+              Bewegung ist deine Stärke
+              <span>Wir bringen sie zurück</span>
             </h1>
             <p className="home-hero__intro">
               Persönliche Behandlung, klare Ziele und ein Plan, der im
