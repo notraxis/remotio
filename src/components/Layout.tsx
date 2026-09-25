@@ -6,9 +6,9 @@ function Brand() {
   return (
     <Link className="brand" to="/" aria-label={`${site.name} Startseite`}>
       <img
-        src="/logo.png"
-        width="1192"
-        height="373"
+        src="/logo_transparent.png"
+        width="2170"
+        height="725"
         alt={`${site.name} Physiotherapie`}
       />
     </Link>
@@ -21,6 +21,15 @@ function Header() {
   useEffect(() => {
     document.body.classList.toggle('nav-open', menuOpen)
     return () => document.body.classList.remove('nav-open')
+  }, [menuOpen])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
   }, [menuOpen])
 
   const closeMenu = () => setMenuOpen(false)
@@ -88,9 +97,9 @@ function Footer() {
         <div className="site-footer__brand">
           <img
             className="site-footer__logo"
-            src="/logo.png"
-            width="1192"
-            height="373"
+            src="/logo_transparent.png"
+            width="2170"
+            height="725"
             alt={site.name}
           />
           <p>{site.claim}</p>
