@@ -1,29 +1,31 @@
 import { Link } from 'react-router-dom'
+import { site } from '../data/site'
+import { t } from '../i18n'
 import { PageHero } from '../components/PageHero'
 import { PageMeta } from '../components/PageMeta'
 import { Reveal } from '../components/Reveal'
-import { site } from '../data/site'
 
 export default function Contact() {
   return (
     <>
       <PageMeta
-        title="Kontakt"
-        description="Kontaktieren Sie die Physiotherapiepraxis re:motio für Telefon, E-Mail, Praxisadresse und Öffnungszeiten."
+        title={t('contact.meta.title')}
+        description={t('contact.meta.description')}
       />
       <PageHero
-        eyebrow="Kontakt"
+        eyebrow={t('contact.hero.eyebrow')}
         title={
           <>
-            Wir hören <span>zu.</span>
+            {t('contact.hero.title')}{' '}
+            <span>{t('contact.hero.titleAccent')}</span>
           </>
         }
-        description="Sie haben eine Frage oder möchten Ihr Anliegen kurz schildern? Nehmen Sie gern Kontakt mit uns auf."
+        description={t('contact.hero.description')}
         aside={
           <div className="page-hero__marker" aria-hidden="true">
-            <span>03</span>
+            <span>{t('contact.hero.marker.number')}</span>
             <i />
-            <span>Kontakt</span>
+            <span>{t('contact.hero.marker.label')}</span>
           </div>
         }
       />
@@ -31,20 +33,17 @@ export default function Contact() {
       <section className="section contact-section">
         <div className="container contact-grid">
           <Reveal className="contact-card contact-card--primary">
-            <p className="section-index">Direkter Kontakt</p>
-            <h2>Per Telefon oder E-Mail.</h2>
-            <p>
-              Am einfachsten erreichen Sie uns während der Praxiszeiten per
-              Telefon. Für schriftliche Anliegen senden Sie uns eine E-Mail.
-            </p>
+            <p className="section-index">{t('contact.direct.index')}</p>
+            <h2>{t('contact.direct.title')}</h2>
+            <p>{t('contact.direct.text')}</p>
             <div className="contact-links">
               <a href={site.contact.phoneHref}>
-                <span>Telefon</span>
+                <span>{t('common.telefon')}</span>
                 <strong>{site.contact.phoneDisplay}</strong>
                 <i aria-hidden="true">↗</i>
               </a>
               <a href={`mailto:${site.contact.email}`}>
-                <span>E-Mail</span>
+                <span>{t('common.email')}</span>
                 <strong>{site.contact.email}</strong>
                 <i aria-hidden="true">↗</i>
               </a>
@@ -52,8 +51,8 @@ export default function Contact() {
           </Reveal>
 
           <Reveal className="contact-card" delay={80}>
-            <p className="section-index">Praxis</p>
-            <h2>Hier finden Sie uns.</h2>
+            <p className="section-index">{t('contact.address.index')}</p>
+            <h2>{t('contact.address.title')}</h2>
             <address>
               {site.contact.street}
               <br />
@@ -74,19 +73,15 @@ export default function Contact() {
       <section className="section closing-cta closing-cta--compact">
         <div className="container closing-cta__inner">
           <Reveal>
-            <p className="eyebrow">Terminwunsch</p>
-            <h2>Lieber direkt online?</h2>
-            <p>
-              Die Online-Buchung wird in Kürze verfügbar sein. Bis dahin
-              übermitteln Sie Ihren Terminwunsch gern telefonisch oder per
-              E-Mail.
-            </p>
+            <p className="eyebrow">{t('contact.cta.eyebrow')}</p>
+            <h2>{t('contact.cta.title')}</h2>
+            <p>{t('contact.cta.text')}</p>
             <div className="button-row">
               <Link className="button button--primary" to="/termine">
-                Termin buchen <span aria-hidden="true">↗</span>
+                {t('common.termin')} <span aria-hidden="true">↗</span>
               </Link>
               <Link className="text-link" to="/leistungen">
-                Leistungen ansehen <span aria-hidden="true">→</span>
+                {t('common.leistungen')} <span aria-hidden="true">→</span>
               </Link>
             </div>
           </Reveal>

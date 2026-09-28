@@ -1,30 +1,34 @@
 import { Link } from 'react-router-dom'
+import { site } from '../data/site'
+import { t } from '../i18n'
 import { MediaPlaceholder } from '../components/MediaPlaceholder'
 import { PageHero } from '../components/PageHero'
 import { PageMeta } from '../components/PageMeta'
 import { Reveal } from '../components/Reveal'
-import { audiences, site, team } from '../data/site'
 
 export default function Practice() {
+  const team = t('team.members')
+
   return (
     <>
       <PageMeta
-        title="Die Praxis"
-        description="re:motio bedeutet zurück zur Bewegung: Physiotherapie für alle, die beweglicher, stärker und selbstständiger werden möchten. Lernen Sie unsere Praxis und unser Team kennen."
+        title={t('practice.meta.title')}
+        description={t('practice.meta.description')}
       />
       <PageHero
-        eyebrow="Die Praxis"
+        eyebrow={t('practice.hero.eyebrow')}
         title={
           <>
-            Zurück zur <span>Bewegung.</span>
+            {t('practice.hero.title')}{' '}
+            <span>{t('practice.hero.titleAccent')}</span>
           </>
         }
-        description="re:motio bedeutet „zurück zur Bewegung“ – und genau dafür stehen wir."
+        description={t('practice.hero.description')}
         aside={
           <div className="page-hero__marker" aria-hidden="true">
-            <span>01</span>
+            <span>{t('practice.hero.marker.number')}</span>
             <i />
-            <span>Praxis</span>
+            <span>{t('practice.hero.marker.label')}</span>
           </div>
         }
       />
@@ -33,50 +37,33 @@ export default function Practice() {
         <div className="container practice-story">
           <Reveal className="practice-story__media">
             <MediaPlaceholder
-              label="Foto der Praxis"
-              caption="Heller, ruhiger Behandlungsraum mit Platz für eine persönliche Behandlung."
+              label={t('media.practice.label')}
+              caption={t('media.practice.caption')}
               variant="practice"
             />
           </Reveal>
           <div className="practice-story__text">
             <Reveal>
-              <p className="section-index">01 — Unser Ziel</p>
+              <p className="section-index">{t('practice.story.index')}</p>
             </Reveal>
             <Reveal delay={70}>
-              <h2>
-                Ihre Beweglichkeit verbessern. Ihren Körper wieder belastbar
-                machen.
-              </h2>
-              <p className="lead">
-                Unser Ziel ist es, Ihre Beweglichkeit zu verbessern, Schmerzen und
-                Beschwerden zu reduzieren und Ihren Körper wieder stärker und
-                belastbarer zu machen.
-              </p>
-              <p>
-                Bei uns ist jeder willkommen – vom Kind bis ins hohe Alter, vom
-                Sportler bis zum Menschen, der im Alltag wieder beweglicher und
-                sicherer werden möchte. Wir begleiten Sie vor und nach
-                Operationen, nach Verletzungen sowie bei akuten und länger
-                bestehenden Beschwerden.
-              </p>
-              <p>
-                Mit moderner, evidenzbasierter Physiotherapie, aktiver Therapie
-                und gezielter Kräftigung entwickeln wir eine Behandlung, die zu
-                Ihnen und Ihren persönlichen Zielen passt.
-              </p>
+              <h2>{t('practice.story.title')}</h2>
+              <p className="lead">{t('practice.story.goal')}</p>
+              <p>{t('practice.story.audience')}</p>
+              <p>{t('practice.story.method')}</p>
             </Reveal>
             <Reveal delay={120}>
-              <ul className="chip-list" aria-label="Für wen wir behandeln">
-                {audiences.map((audience) => (
+              <ul
+                className="chip-list"
+                aria-label={t('practice.story.chipsLabel')}
+              >
+                {t('practice.story.audiences').map((audience) => (
                   <li key={audience}>{audience}</li>
                 ))}
               </ul>
             </Reveal>
             <Reveal delay={160}>
-              <p className="statement">
-                Denn Bewegung bedeutet für uns mehr als körperliche Funktion –
-                sie bedeutet Freiheit, Selbstständigkeit und Lebensqualität.
-              </p>
+              <p className="statement">{t('practice.story.statement')}</p>
             </Reveal>
           </div>
         </div>
@@ -86,20 +73,17 @@ export default function Practice() {
         <div className="container">
           <div className="section-heading">
             <div>
-              <p className="section-index">02 — Das Team</p>
-              <h2>Menschen, die zuhören.</h2>
+              <p className="section-index">{t('practice.team.index')}</p>
+              <h2>{t('practice.team.title')}</h2>
             </div>
-            <p>
-              Namen, Porträts und Qualifikationen werden nach dem finalen
-              Praxisteam ergänzt.
-            </p>
+            <p>{t('practice.team.intro')}</p>
           </div>
           <div className="team-grid">
             {team.map((person, index) => (
               <Reveal key={person.name} delay={index * 80}>
                 <article className="team-card">
                   <MediaPlaceholder
-                    label={`Porträt ${index + 1}`}
+                    label={t('media.team.label', { number: index + 1 })}
                     variant="team"
                   />
                   <div className="team-card__info">
@@ -117,15 +101,12 @@ export default function Practice() {
       <section className="section closing-cta">
         <div className="container closing-cta__inner">
           <Reveal>
-            <p className="eyebrow">{site.claim}</p>
-            <h2>Lassen Sie uns über Ihr Anliegen sprechen.</h2>
-            <p>
-              Sie haben Fragen zur Behandlung oder möchten einen Termin
-              vereinbaren? Wir freuen uns auf Sie.
-            </p>
+            <p className="eyebrow">{t('practice.cta.eyebrow')}</p>
+            <h2>{t('practice.cta.title')}</h2>
+            <p>{t('practice.cta.text')}</p>
             <div className="button-row">
               <Link className="button button--primary" to="/termine">
-                Termin buchen <span aria-hidden="true">↗</span>
+                {t('common.termin')} <span aria-hidden="true">↗</span>
               </Link>
               <a className="text-link" href={site.contact.phoneHref}>
                 {site.contact.phoneDisplay} <span aria-hidden="true">→</span>

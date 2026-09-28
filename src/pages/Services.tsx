@@ -1,29 +1,33 @@
 import { Link } from 'react-router-dom'
+import { site } from '../data/site'
+import { t } from '../i18n'
 import { PageHero } from '../components/PageHero'
 import { PageMeta } from '../components/PageMeta'
 import { Reveal } from '../components/Reveal'
-import { services, site } from '../data/site'
 
 export default function Services() {
+  const services = t('services.items')
+
   return (
     <>
       <PageMeta
-        title="Leistungen"
-        description="Unsere Physiotherapie in der Übersicht: Krankengymnastik, Manuelle Therapie, KGG, Manuelle Lymphdrainage, Massage, Elektrotherapie, Ultraschall und Wärmetherapie."
+        title={t('services.meta.title')}
+        description={t('services.meta.description')}
       />
       <PageHero
-        eyebrow="Leistungen"
+        eyebrow={t('services.hero.eyebrow')}
         title={
           <>
-            Was wir <span>anbieten.</span>
+            {t('services.hero.title')}{' '}
+            <span>{t('services.hero.titleAccent')}</span>
           </>
         }
-        description="Von der aktiven Bewegungstherapie bis zur Wärmetherapie: Methoden, die wir passend zu Ihren Beschwerden und Zielen einsetzen."
+        description={t('services.hero.description')}
         aside={
           <div className="page-hero__marker" aria-hidden="true">
-            <span>02</span>
+            <span>{t('services.hero.marker.number')}</span>
             <i />
-            <span>Leistungen</span>
+            <span>{t('services.hero.marker.label')}</span>
           </div>
         }
       />
@@ -51,35 +55,15 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="section section--tint">
-        <div className="container note-layout">
-          <Reveal>
-            <p className="section-index">Hinweis</p>
-          </Reveal>
-          <Reveal delay={70}>
-            <h2>Welche Behandlung zu Ihnen passt, klären wir gemeinsam.</h2>
-            <p>
-              Symptome können verschiedene Ursachen haben. Nach einer kurzen
-              Beratung und Untersuchung entscheiden wir gemeinsam, welcher
-              Ansatz sinnvoll ist. Ob eine Leistung von der Krankenkasse
-              übernommen wird, hängt vom jeweiligen Behandlungsfall ab.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="section closing-cta">
         <div className="container closing-cta__inner">
           <Reveal>
-            <p className="eyebrow">Ihr nächster Schritt</p>
-            <h2>Sie sind unsicher, was zu Ihnen passt?</h2>
-            <p>
-              Bringen Sie Ihre Fragen und Beschwerden mit in das Erstgespräch –
-              wir nehmen uns Zeit dafür.
-            </p>
+            <p className="eyebrow">{t('services.cta.eyebrow')}</p>
+            <h2>{t('services.cta.title')}</h2>
+            <p>{t('services.cta.text')}</p>
             <div className="button-row">
               <Link className="button button--primary" to="/termine">
-                Termin buchen <span aria-hidden="true">↗</span>
+                {t('common.termin')} <span aria-hidden="true">↗</span>
               </Link>
               <a className="text-link" href={site.contact.phoneHref}>
                 {site.contact.phoneDisplay} <span aria-hidden="true">→</span>

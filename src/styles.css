@@ -209,17 +209,6 @@ h3 {
   background: var(--reed);
 }
 
-.button--outline {
-  border-color: var(--graphite-medium);
-  color: var(--graphite);
-}
-
-.button--outline:hover {
-  border-color: var(--reed-deep);
-  background: var(--reed-soft);
-  color: var(--reed-ink);
-}
-
 .button--disabled {
   border-color: var(--line);
   background: var(--graphite-soft);
@@ -520,6 +509,12 @@ h3 {
   line-height: 1.5;
 }
 
+.home-hero__goal {
+  max-width: 36rem;
+  color: rgba(39, 41, 43, 0.66);
+  font-size: 1.05rem;
+}
+
 .home-hero__facts {
   display: flex;
   flex-wrap: wrap;
@@ -546,39 +541,21 @@ h3 {
   content: '';
 }
 
-.practice-preview {
+.jump-grid {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(3rem, 7vw, 7rem);
-}
-
-.practice-preview__content {
-  display: grid;
-  justify-items: start;
-  gap: 1.8rem;
-}
-
-.practice-preview__content > p:not(.section-index) {
-  color: rgba(39, 41, 43, 0.74);
-  font-size: 1.15rem;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
 }
 
 /* the reveal wrapper is the grid item, so it has to pass its height on */
-.service-grid > .reveal,
+.jump-grid > .reveal,
 .team-grid > .reveal {
   display: grid;
 }
 
-.service-card {
+.jump-card {
   display: grid;
-  min-height: 15rem;
+  height: 100%;
   align-content: start;
   gap: 0.9rem;
   border: 1px solid var(--line);
@@ -588,36 +565,29 @@ h3 {
   transition: border-color 200ms ease, background-color 200ms ease;
 }
 
-.service-card:hover {
+.jump-card:hover {
   border-color: var(--reed-medium);
   background: rgba(85, 116, 74, 0.05);
 }
 
-.service-card__number {
+.jump-card__number {
   color: var(--reed-deep);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
 
-.service-card > p {
+.jump-card > p {
   color: rgba(39, 41, 43, 0.7);
 }
 
-.service-card--link {
-  background: var(--reed-deep);
-  color: var(--shell);
-  transition: background-color 200ms ease;
-}
-
-.service-card--link .service-card__number,
-.service-card--link > p {
-  color: rgba(249, 247, 245, 0.7);
-}
-
-.service-card--link:hover {
-  border-color: var(--reed-deep);
-  background: var(--reed-ink);
+.jump-card__link {
+  margin-top: 0.4rem;
+  color: var(--reed-deep);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .team-grid {
@@ -1516,7 +1486,6 @@ h3 {
   }
 
   .section-heading,
-  .practice-preview,
   .practice-story,
   .note-layout,
   .legal-layout,
@@ -1560,7 +1529,7 @@ h3 {
     max-width: 32rem;
   }
 
-  .service-grid,
+  .jump-grid,
   .team-grid {
     grid-template-columns: 1fr;
   }
@@ -1619,18 +1588,6 @@ h3 {
 
   .home-hero__inner {
     gap: 1.6rem;
-  }
-
-  .service-card {
-    min-height: auto;
-  }
-
-  .practice-preview__content {
-    justify-items: stretch;
-  }
-
-  .practice-preview__content .button {
-    width: 100%;
   }
 
   .service-row {

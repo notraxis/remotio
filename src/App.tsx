@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
+import { t } from './i18n'
 
 const Home = lazy(() => import('./pages/Home'))
 const Practice = lazy(() => import('./pages/Practice'))
@@ -13,7 +14,7 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 
 function PageLoader() {
   return (
-    <div className="page-loader" role="status" aria-label="Seite wird geladen">
+    <div className="page-loader" role="status" aria-label={t('a11y.pageLoading')}>
       <span />
     </div>
   )
