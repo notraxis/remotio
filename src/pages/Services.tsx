@@ -37,7 +37,6 @@ export default function Services() {
           {services.map((service, index) => (
             <Reveal key={service.title} delay={index * 45}>
               <article className="service-row">
-                <div className="service-row__number">{service.number}</div>
                 <div className="service-row__content">
                   <h2>{service.title}</h2>
                   <div>

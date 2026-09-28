@@ -24,7 +24,7 @@ export const de = {
 
   nav: [
     { label: 'Start', path: '/' },
-    { label: 'Die Praxis', path: '/praxis' },
+    { label: 'Praxis & Team', path: '/praxis' },
     { label: 'Leistungen', path: '/leistungen' },
     { label: 'Kontakt', path: '/kontakt' },
   ],
@@ -61,32 +61,32 @@ export const de = {
       eyebrow: 'Physiotherapie in Bewegung',
       title: 'Bewegung ist Ihre Stärke',
       titleAccent: 'Wir bringen sie zurück.',
-      meaning:
-        're:motio bedeutet „zurück zur Bewegung“ – und genau dafür stehen wir.',
+      meaning: {
+        nameAccent: 're:',
+        name: 'motio',
+        definition:
+          'bedeutet „zurück zur Bewegung“ – und genau dafür stehen wir.',
+      },
       goal:
         'Unser Ziel ist es, Ihre Beweglichkeit zu verbessern, Schmerzen und Beschwerden zu reduzieren und Ihren Körper wieder stärker und belastbarer zu machen.',
       facts: ['Evidenzbasiert', 'Jeder willkommen', 'Mit Baja'],
     },
     areas: {
       index: 'Direkt weiter',
-      title: 'Drei Wege zu mehr Bewegung.',
-      intro: 'Alles Weitere finden Sie auf den Seiten selbst.',
-      link: 'Zur Seite',
+      title: 'Praxis, Leistungen, Kontakt.',
+      intro: 'Diese drei Seiten führen Sie weiter – alles Weitere steht dort.',
       items: [
         {
-          index: '01',
-          title: 'Die Praxis',
+          title: 'Praxis & Team',
           text: 'Was re:motio bedeutet, für wen wir behandeln und wer hinter der Praxis steht.',
           path: '/praxis',
         },
         {
-          index: '02',
           title: 'Leistungen',
           text: 'Sieben Methoden von Krankengymnastik bis Wärmetherapie im Überblick.',
           path: '/leistungen',
         },
         {
-          index: '03',
           title: 'Kontakt & Termine',
           text: 'Termin online buchen, anrufen oder Adresse und Öffnungszeiten nachsehen.',
           path: '/kontakt',
@@ -102,17 +102,17 @@ export const de = {
 
   practice: {
     meta: {
-      title: 'Die Praxis',
+      title: 'Praxis & Team',
       description:
         're:motio bedeutet zurück zur Bewegung: Physiotherapie für alle, die beweglicher, stärker und selbstständiger werden möchten. Lernen Sie unsere Praxis und unser Team kennen.',
     },
     hero: {
-      eyebrow: 'Die Praxis',
+      eyebrow: 'Praxis & Team',
       title: 'Zurück zur',
       titleAccent: 'Bewegung.',
       description:
         'Persönliche Physiotherapie für alle, die wieder beweglicher, stärker und selbstständiger werden möchten.',
-      marker: { number: '01', label: 'Praxis' },
+      marker: { number: '01', label: 'Die Praxis' },
     },
     story: {
       index: '01 — Unser Ziel',
@@ -163,49 +163,42 @@ export const de = {
     },
     items: [
       {
-        number: '01',
         title: 'Krankengymnastik',
         description:
           'Aktive Bewegungstherapie als Basis jeder Behandlung: mobilisieren, stabilisieren und die Belastbarkeit schrittweise steigern.',
         focus: ['Mobilität', 'Kraft', 'Alltag'],
       },
       {
-        number: '02',
         title: 'Manuelle Therapie (MT)',
         description:
           'Gezielte Techniken für Gelenke und Gewebe, um Schmerzen zu lindern und Beweglichkeit wiederherzustellen.',
         focus: ['Gelenke', 'Mobilisation', 'Schmerzlinderung'],
       },
       {
-        number: '03',
         title: 'Krankengymnastik am Gerät (KGG)',
         description:
           'Kraftaufbau an speziell ausgestatteten Geräten, abgestimmt auf Ihren Heilungsverlauf und Ihre Ziele.',
         focus: ['Kraftaufbau', 'Gerätetraining', 'Begleitung'],
       },
       {
-        number: '04',
         title: 'Manuelle Lymphdrainage (MLD)',
         description:
           'Sanfte Entlastung bei Schwellungen und Wasserablagerungen, besonders nach Operationen und Verletzungen.',
         focus: ['Schwellungen', 'Nach Operationen', 'Erholung'],
       },
       {
-        number: '05',
         title: 'Massage',
         description:
           'Entspannung von Muskulatur und Bindegewebe für einen freieren, leichteren Alltag.',
         focus: ['Entspannung', 'Muskulatur', 'Erholung'],
       },
       {
-        number: '06',
         title: 'Elektrotherapie / Ultraschall',
         description:
           'Physikalische Anwendungen zur Schmerzreduktion und zur Unterstützung des Heilungsverlaufs.',
         focus: ['Schmerz', 'Heilung', 'Begleitung'],
       },
       {
-        number: '07',
         title: 'Wärmetherapie',
         description:
           'Wärme entspannt das Gewebe und macht Bewegungen angenehmer – oft der Einstieg in die aktive Behandlung.',

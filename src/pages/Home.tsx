@@ -20,7 +20,17 @@ export default function Home() {
             {t('home.hero.title')}
             <span>{t('home.hero.titleAccent')}</span>
           </h1>
-          <p className="home-hero__intro">{t('home.hero.meaning')}</p>
+          <p className="home-hero__name">
+            <span className="home-hero__wordmark">
+              <span className="home-hero__wordmark-accent">
+                {t('home.hero.meaning.nameAccent')}
+              </span>
+              {t('home.hero.meaning.name')}
+            </span>
+            <span className="home-hero__definition">
+              {t('home.hero.meaning.definition')}
+            </span>
+          </p>
           <p className="home-hero__goal">{t('home.hero.goal')}</p>
           <div className="button-row">
             <Link className="button button--primary" to="/termine">
@@ -40,18 +50,16 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="section-index">{t('home.areas.index')}</p>
-              <h2>{t('home.areas.title')}</h2>
             </div>
           </div>
-          <div className="jump-grid">
+          <div className="jump-list">
             {areas.map((area, index) => (
               <Reveal key={area.path} delay={index * 70}>
-                <Link className="jump-card" to={area.path}>
-                  <span className="jump-card__number">{area.index}</span>
+                <Link className="jump-row" to={area.path}>
                   <h3>{area.title}</h3>
                   <p>{area.text}</p>
-                  <span className="jump-card__link">
-                    {t('home.areas.link')} <span aria-hidden="true">→</span>
+                  <span className="jump-row__arrow" aria-hidden="true">
+                    →
                   </span>
                 </Link>
               </Reveal>
