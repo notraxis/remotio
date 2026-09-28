@@ -7,9 +7,9 @@ export const navigation = [
 
 export const site = {
   name: 're:motio',
-  claim: 'Physiotherapie mit Zeit für dich',
+  claim: 'Bewegung ist Ihre Stärke. Wir bringen sie zurück.',
   description:
-    'Persönliche Physiotherapie für mehr Beweglichkeit, Sicherheit und einen selbstständigen Alltag.',
+    're:motio ist Ihre Physiotherapiepraxis für mehr Beweglichkeit, weniger Beschwerden und einen belastbaren Körper.',
   contact: {
     email: 'hallo@beispiel.de',
     phoneDisplay: '+49 123 4567890',
@@ -26,81 +26,70 @@ export const site = {
   bookingUrl: '',
 }
 
+export const heroFacts = [
+  'Evidenzbasiert',
+  'Jeder willkommen',
+  'Vor & nach Operationen',
+]
+
+export const audiences = [
+  'Kinder & Jugendliche',
+  'Erwachsene jeden Alters',
+  'Sportlerinnen & Sportler',
+  'Vor & nach Operationen',
+  'Nach Verletzungen',
+  'Akute & chronische Beschwerden',
+]
+
 export const services = [
   {
     number: '01',
-    title: 'Orthopädie',
+    title: 'Krankengymnastik',
     description:
-      'Begleitung bei Rücken- und Gelenkbeschwerden, nach Operationen und auf dem Weg zurück zu mehr Belastbarkeit.',
-    focus: ['Rücken & Gelenke', 'Mobilität', 'Kraft & Stabilität'],
+      'Aktive Bewegungstherapie als Basis jeder Behandlung: mobilisieren, stabilisieren und die Belastbarkeit schrittweise steigern.',
+    focus: ['Mobilität', 'Kraft', 'Alltag'],
   },
   {
     number: '02',
-    title: 'Neurologie',
+    title: 'Manuelle Therapie (MT)',
     description:
-      'Individuelle Therapie für Balance, Koordination und die Verbesserung motorischer Fähigkeiten im Alltag.',
-    focus: ['Balance', 'Koordination', 'Alltag'],
+      'Gezielte Techniken für Gelenke und Gewebe, um Schmerzen zu lindern und Beweglichkeit wiederherzustellen.',
+    focus: ['Gelenke', 'Mobilisation', 'Schmerzlinderung'],
   },
   {
     number: '03',
-    title: 'Schmerztherapie',
+    title: 'Krankengymnastik am Gerät (KGG)',
     description:
-      'Ganzheitliche Ansätze bei chronischen und akuten Schmerzen mit Blick auf Ursachen und nachhaltige Strategien.',
-    focus: ['Chronische Schmerzen', 'Bewegungsverhalten', 'Selbstständigkeit'],
+      'Kraftaufbau an speziell ausgestatteten Geräten, abgestimmt auf Ihren Heilungsverlauf und Ihre Ziele.',
+    focus: ['Kraftaufbau', 'Gerätetraining', 'Begleitung'],
   },
   {
     number: '04',
-    title: 'Sporttherapie',
+    title: 'Manuelle Lymphdrainage (MLD)',
     description:
-      'Vorbereitung auf Training und Wettkampf, Regeneration und die verletzungsfreie Rückkehr in die Bewegung.',
-    focus: ['Sportunterstützung', 'Regeneration', 'Prävention'],
+      'Sanfte Entlastung bei Schwellungen und Wasserablagerungen, besonders nach Operationen und Verletzungen.',
+    focus: ['Schwellungen', 'Nach Operationen', 'Erholung'],
   },
   {
     number: '05',
-    title: 'Postoperative Therapie',
+    title: 'Massage',
     description:
-      'Strukturierte Rehabilitation mit klaren Zielen, damit das operierte Gelenk schrittweise wieder Vertrauen gewinnt.',
-    focus: ['Heilungsverlauf', 'Gelenkbeweglichkeit', 'Kraftaufbau'],
+      'Entspannung von Muskulatur und Bindegewebe für einen freieren, leichteren Alltag.',
+    focus: ['Entspannung', 'Muskulatur', 'Erholung'],
   },
   {
     number: '06',
-    title: 'Prävention',
+    title: 'Elektrotherapie / Ultraschall',
     description:
-      'Gezieltes Training für einen stabileren, bewussteren und im Alltag resilienteren Körper.',
-    focus: ['Haltung', 'Resilienz', 'Alltagsroutine'],
-  },
-] as const
-
-export const principles = [
-  {
-    number: '01',
-    title: 'Zuerst verstehen',
-    text: 'Wir hören zu, ordnen ein und entwickeln gemeinsam ein Ziel, das zu deinem Alltag passt.',
+      'Physikalische Anwendungen zur Schmerzreduktion und zur Unterstützung des Heilungsverlaufs.',
+    focus: ['Schmerz', 'Heilung', 'Begleitung'],
   },
   {
-    number: '02',
-    title: 'Gezielt bewegen',
-    text: 'Jede Einheit beginnt dort, wo du heute stehen möchtest – mit klaren und dosierten Reizen.',
-  },
-  {
-    number: '03',
-    title: 'Selbstständig weiter',
-    text: 'Du erhältst Übungen und Impulse, die dich auch zwischen den Terminen voranbringen.',
-  },
-] as const
-
-export const practiceValues = [
-  {
-    title: 'Zeit für dich',
-    text: 'Ruhige Behandlungen, aufmerksame Gespräche und Raum für Fragen.',
-  },
-  {
-    title: 'Klar und nachvollziehbar',
-    text: 'Du verstehst, was wir tun, warum es sinnvoll ist und welches Ziel wir verfolgen.',
-  },
-  {
-    title: 'Individuell statt standardisiert',
-    text: 'Dein Körper, deine Belastbarkeit und dein Ziel bestimmen den gemeinsamen Weg.',
+    number: '07',
+    title: 'Wärmetherapie',
+    description:
+      'Wärme entspannt das Gewebe und macht Bewegungen angenehmer – oft der Einstieg in die aktive Behandlung.',
+    focus: ['Entspannung', 'Vorbereitung', 'Beweglichkeit'],
   },
 ] as const
 
@@ -109,12 +98,10 @@ export const team = [
     name: 'Name folgt',
     role: 'Physiotherapie',
     focus: 'Schwerpunkte und Qualifikationen werden ergänzt.',
-    initials: 'RM',
   },
   {
     name: 'Name folgt',
     role: 'Physiotherapie',
     focus: 'Persönliche Vorstellung und behandlungsbezogene Schwerpunkte folgen.',
-    initials: 'RM',
   },
 ] as const
