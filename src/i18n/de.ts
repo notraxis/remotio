@@ -65,7 +65,7 @@ export const de = {
         're:motio bedeutet „zurück zur Bewegung“ – und genau dafür stehen wir.',
       goal:
         'Unser Ziel ist es, Ihre Beweglichkeit zu verbessern, Schmerzen und Beschwerden zu reduzieren und Ihren Körper wieder stärker und belastbarer zu machen.',
-      facts: ['Evidenzbasiert', 'Jeder willkommen', 'Vor & nach Operationen'],
+      facts: ['Evidenzbasiert', 'Jeder willkommen', 'Mit Baja'],
     },
     areas: {
       index: 'Direkt weiter',
