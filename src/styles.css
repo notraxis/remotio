@@ -436,6 +436,16 @@ h3 {
   margin-top: 1.4rem;
 }
 
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.site-footer__social-icon {
+  flex-shrink: 0;
+}
+
 .site-footer__nav,
 .site-footer__contact {
   display: flex;

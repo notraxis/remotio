@@ -127,11 +127,40 @@ function Footer() {
             {t('footer.socialLabel')}
           </p>
           <a
+            className="site-footer__social-link"
             href={site.social.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t('a11y.instagram', { name: site.name })}
           >
+            <svg
+              className="site-footer__social-icon"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+            </svg>
             {site.social.instagram.handle}{' '}
             <span aria-hidden="true">↗</span>
           </a>
