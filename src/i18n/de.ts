@@ -69,7 +69,7 @@ export const de = {
       },
       goal:
         'Unser Ziel ist es, Ihre Beweglichkeit zu verbessern, Schmerzen und Beschwerden zu reduzieren und Ihren Körper wieder stärker und belastbarer zu machen.',
-      facts: ['Evidenzbasiert', 'Jeder willkommen', 'Mit Baja'],
+      facts: ['Evidenzbasiert', 'Modern', 'Individuell'],
     },
     areas: {
       index: 'Direkt weiter',
@@ -83,12 +83,12 @@ export const de = {
         },
         {
           title: 'Leistungen',
-          text: 'Sieben Methoden von Krankengymnastik bis Wärmetherapie im Überblick.',
+          text: 'Von Krankengymnastik bis Hausbesuch – Unsere Leistungen im Überblick.',
           path: '/leistungen',
         },
         {
           title: 'Kontakt & Termine',
-          text: 'Termin online buchen, anrufen oder Adresse und Öffnungszeiten nachsehen.',
+          text: 'Termine online oder telefonisch vereinbaren – Unsere Kontaktdaten und Öffnungszeiten.',
           path: '/kontakt',
         },
       ],
@@ -108,20 +108,26 @@ export const de = {
     },
     hero: {
       eyebrow: 'Praxis & Team',
-      title: 'Zurück zur',
-      titleAccent: 'Bewegung.',
+      title: 'Das sind',
+      titleAccent: 'wir.',
       description:
-        'Persönliche Physiotherapie für alle, die wieder beweglicher, stärker und selbstständiger werden möchten.',
-      marker: { number: '01', label: 'Die Praxis' },
+        'Persönliche Physiotherapie für alle, die schmerzfreier, aktiver, stärker und selbstständiger werden möchten.',
     },
     story: {
-      index: '01 — Unser Ziel',
-      title: 'Ihre Beweglichkeit verbessern. Ihren Körper wieder belastbar machen.',
-      goal: 'Unser Ziel ist es, Ihre Beweglichkeit zu verbessern, Schmerzen und Beschwerden zu reduzieren und Ihren Körper wieder stärker und belastbarer zu machen.',
-      audience:
-        'Bei uns ist jeder willkommen – vom Kind bis ins hohe Alter, vom Sportler bis zum Menschen, der im Alltag wieder beweglicher und sicherer werden möchte. Wir begleiten Sie vor und nach Operationen, nach Verletzungen sowie bei akuten und länger bestehenden Beschwerden.',
-      method:
-        'Mit moderner, evidenzbasierter Physiotherapie, aktiver Therapie und gezielter Kräftigung entwickeln wir eine Behandlung, die zu Ihnen und Ihren persönlichen Zielen passt.',
+      index: 'Unser Ziel',
+      title: 'Mehr Beweglichkeit. Weniger Schmerz.',
+      audience: [
+        'Bei uns ist ',
+        { strong: 'jeder willkommen' },
+        ' – vom Kind bis ins hohe Alter, vom Sportler bis zum Menschen, der im Alltag wieder beweglicher und sicherer werden möchte. Wir begleiten Sie ',
+        { strong: 'vor und nach Operationen' },
+        ', nach Verletzungen sowie bei akuten und länger bestehenden Beschwerden.',
+      ],
+      method: [
+        'Mit moderner, evidenzbasierter Physiotherapie, aktiver Therapie und gezielter Kräftigung entwickeln wir eine Behandlung, die zu ',
+        { strong: 'Ihnen und Ihren persönlichen Zielen' },
+        ' passt.',
+      ],
       chipsLabel: 'Für wen wir behandeln',
       statement:
         'Denn Bewegung bedeutet für uns mehr als körperliche Funktion – sie bedeutet Freiheit, Selbstständigkeit und Lebensqualität.',
@@ -135,10 +141,8 @@ export const de = {
       ],
     },
     team: {
-      index: '02 — Das Team',
+      index: 'Das Team',
       title: 'Menschen, die zuhören.',
-      intro:
-        'Namen, Porträts und Qualifikationen werden nach dem finalen Praxisteam ergänzt.',
     },
     cta: {
       eyebrow: 'Bewegung ist Ihre Stärke. Wir bringen sie zurück.',
@@ -151,21 +155,20 @@ export const de = {
     meta: {
       title: 'Leistungen',
       description:
-        'Unsere Physiotherapie in der Übersicht: Krankengymnastik, Manuelle Therapie, KGG, Manuelle Lymphdrainage, Massage, Elektrotherapie, Ultraschall und Wärmetherapie.',
+        'Unsere Physiotherapie in der Übersicht: Krankengymnastik, Manuelle Therapie, KGG, Manuelle Lymphdrainage, Massage, Elektrotherapie, Ultraschall, Wärmetherapie, Kinesiotape und Hausbesuche.',
     },
     hero: {
       eyebrow: 'Leistungen',
       title: 'Was wir',
       titleAccent: 'anbieten.',
       description:
-        'Von der aktiven Bewegungstherapie bis zur Wärmetherapie: Methoden, die wir passend zu Ihren Beschwerden und Zielen einsetzen.',
-      marker: { number: '02', label: 'Leistungen' },
+        'Wir bieten ein breites Spektrum physiotherapeutischer Methoden – für mehr Beweglichkeit, weniger Beschwerden und einen belastbaren Körper.',
     },
     items: [
       {
         title: 'Krankengymnastik',
         description:
-          'Aktive Bewegungstherapie als Basis jeder Behandlung: mobilisieren, stabilisieren und die Belastbarkeit schrittweise steigern.',
+          'Aktive Bewegungstherapie als Basis jeder Behandlung: mobilisieren, schmerzfreier und belastbarer werden.',
         focus: ['Mobilität', 'Kraft', 'Alltag'],
       },
       {
@@ -183,7 +186,7 @@ export const de = {
       {
         title: 'Manuelle Lymphdrainage (MLD)',
         description:
-          'Sanfte Entlastung bei Schwellungen und Wasserablagerungen, besonders nach Operationen und Verletzungen.',
+          'Sanfte Entlastung bei Schwellungen und Ödemen, besonders nach Operationen und Verletzungen.',
         focus: ['Schwellungen', 'Nach Operationen', 'Erholung'],
       },
       {
@@ -203,6 +206,18 @@ export const de = {
         description:
           'Wärme entspannt das Gewebe und macht Bewegungen angenehmer – oft der Einstieg in die aktive Behandlung.',
         focus: ['Entspannung', 'Vorbereitung', 'Beweglichkeit'],
+      },
+      {
+        title: 'Kinesiotape',
+        description:
+          'Elastische Tapes unterstützen Muskeln, Gelenke und Gewebe – zur Entlastung, Stabilisierung und als Begleitung der aktiven Therapie.',
+        focus: ['Stabilisierung', 'Entlastung', 'Schmerzlinderung'],
+      },
+      {
+        title: 'Hausbesuche',
+        description:
+          'Physiotherapie bei Ihnen zu Hause, wenn ein Weg in die Praxis nicht möglich oder beschwerlich ist – persönlich und mit denselben Behandlungszielen.',
+        focus: ['Zuhause', 'Mobilitätseingeschränkt', 'Persönlich'],
       },
     ],
     cta: {
@@ -224,7 +239,6 @@ export const de = {
       titleAccent: 'buchen.',
       description:
         'Wählen Sie online einen Termin oder rufen Sie uns an – wir finden gemeinsam den passenden Zeitpunkt.',
-      marker: { number: '04', label: 'Termine' },
     },
     booking: {
       status: 'Vorbereitung',
@@ -238,7 +252,11 @@ export const de = {
     alternative: {
       index: 'Direkt Kontakt aufnehmen',
       title: 'Lieber telefonisch?',
-      text: 'Rufen Sie uns während der Praxiszeiten an – wir vereinbaren direkt einen Termin mit Ihnen.',
+      text: [
+        'Rufen Sie uns während der Telefonzeiten ',
+        { strong: 'zwischen 8 und 12 Uhr' },
+        ' an – wir vereinbaren direkt einen Termin mit Ihnen.',
+      ],
     },
   },
 
@@ -254,12 +272,11 @@ export const de = {
       titleAccent: 'zu.',
       description:
         'Sie haben eine Frage oder möchten Ihr Anliegen kurz schildern? Nehmen Sie gern Kontakt mit uns auf.',
-      marker: { number: '03', label: 'Kontakt' },
     },
     direct: {
       index: 'Direkter Kontakt',
       title: 'Per Telefon oder E-Mail.',
-      text: 'Am einfachsten erreichen Sie uns während der Praxiszeiten per Telefon. Für schriftliche Anliegen senden Sie uns eine E-Mail.',
+      text: 'Telefonisch sind wir vormittags von 8 bis 12 Uhr für Sie da. Außerhalb dieser Zeiten können Sie jederzeit online buchen oder uns eine Terminanfrage per E-Mail senden.',
     },
     address: {
       index: 'Praxis',

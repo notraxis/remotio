@@ -5,6 +5,7 @@ import { MediaPlaceholder } from '../components/MediaPlaceholder'
 import { PageHero } from '../components/PageHero'
 import { PageMeta } from '../components/PageMeta'
 import { Reveal } from '../components/Reveal'
+import { RichText } from '../components/RichText'
 
 export default function Practice() {
   const team = t('team.members')
@@ -24,13 +25,6 @@ export default function Practice() {
           </>
         }
         description={t('practice.hero.description')}
-        aside={
-          <div className="page-hero__marker" aria-hidden="true">
-            <span>{t('practice.hero.marker.number')}</span>
-            <i />
-            <span>{t('practice.hero.marker.label')}</span>
-          </div>
-        }
       />
 
       <section className="section">
@@ -48,9 +42,12 @@ export default function Practice() {
             </Reveal>
             <Reveal delay={70}>
               <h2>{t('practice.story.title')}</h2>
-              <p className="lead">{t('practice.story.goal')}</p>
-              <p>{t('practice.story.audience')}</p>
-              <p>{t('practice.story.method')}</p>
+              <p>
+                <RichText parts={t('practice.story.audience')} />
+              </p>
+              <p>
+                <RichText parts={t('practice.story.method')} />
+              </p>
             </Reveal>
             <Reveal delay={120}>
               <ul
@@ -76,7 +73,6 @@ export default function Practice() {
               <p className="section-index">{t('practice.team.index')}</p>
               <h2>{t('practice.team.title')}</h2>
             </div>
-            <p>{t('practice.team.intro')}</p>
           </div>
           <div className="team-grid">
             {team.map((person, index) => (

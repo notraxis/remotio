@@ -478,20 +478,20 @@ h3 {
 
 .home-hero {
   border-bottom: 1px solid var(--line);
-  padding-block: clamp(3.5rem, 6.5vw, 6rem);
+  padding-block: clamp(2.25rem, 4vw, 3.5rem);
 }
 
 .home-hero__inner {
   display: grid;
   justify-items: start;
-  gap: 1.9rem;
+  gap: clamp(1.1rem, 1.7vw, 1.35rem);
 }
 
 .home-hero h1 {
-  max-width: 13ch;
-  font-size: clamp(3.6rem, 7.4vw, 7.6rem);
-  letter-spacing: -0.055em;
-  line-height: 0.92;
+  max-width: 22ch;
+  font-size: clamp(2.6rem, 4.6vw, 4.8rem);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
 }
 
 .home-hero h1 span {
@@ -500,36 +500,28 @@ h3 {
   font-weight: 320;
 }
 
-.home-hero__name {
-  display: grid;
-  gap: 0.5rem;
-  max-width: 36rem;
+.home-hero__meaning {
+  max-width: 38rem;
   border-top: 1px solid var(--reed-medium);
-  padding-top: 1.3rem;
-}
-
-.home-hero__wordmark {
-  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 1;
-}
-
-.home-hero__wordmark-accent {
-  color: var(--reed);
-}
-
-.home-hero__definition {
+  padding-top: 0.9rem;
   color: rgba(39, 41, 43, 0.78);
-  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
   line-height: 1.5;
-  text-wrap: balance;
+  text-wrap: pretty;
+}
+
+.home-hero__meaning-name {
+  color: var(--graphite);
+  font-weight: 650;
+}
+
+.home-hero__meaning-accent {
+  color: var(--reed);
 }
 
 .home-hero__goal {
   max-width: 36rem;
   color: rgba(39, 41, 43, 0.66);
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 .home-hero__facts {
@@ -544,7 +536,7 @@ h3 {
   align-items: center;
   gap: 0.6rem;
   color: rgba(39, 41, 43, 0.75);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -838,6 +830,20 @@ h3 {
   gap: 3rem;
 }
 
+.page-hero__grid--solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.page-hero .eyebrow {
+  color: var(--reed);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+}
+
+.page-hero .eyebrow::before {
+  width: 3.25rem;
+}
+
 .page-hero__content {
   display: grid;
   justify-items: start;
@@ -860,23 +866,6 @@ h3 {
   color: rgba(39, 41, 43, 0.7);
   font-size: clamp(1.1rem, 1.6vw, 1.35rem);
   line-height: 1.5;
-}
-
-.page-hero__marker {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 1rem;
-  color: rgba(39, 41, 43, 0.68);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.page-hero__marker i {
-  height: 1px;
-  background: var(--reed-medium);
 }
 
 .practice-story {
@@ -906,7 +895,8 @@ h3 {
 }
 
 .practice-story__text h2 {
-  max-width: 16ch;
+  max-width: 22ch;
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
 }
 
 .chip-list {
@@ -1552,10 +1542,6 @@ h3 {
     gap: 2.2rem;
   }
 
-  .page-hero__marker {
-    max-width: 16rem;
-  }
-
   .media-placeholder__visual,
   .media-placeholder--team .media-placeholder__visual {
     min-height: min(30rem, 105vw);
@@ -1600,7 +1586,7 @@ h3 {
   }
 
   .home-hero__inner {
-    gap: 1.6rem;
+    gap: 1rem;
   }
 
   .service-row__content {

@@ -21,13 +21,6 @@ export default function Contact() {
           </>
         }
         description={t('contact.hero.description')}
-        aside={
-          <div className="page-hero__marker" aria-hidden="true">
-            <span>{t('contact.hero.marker.number')}</span>
-            <i />
-            <span>{t('contact.hero.marker.label')}</span>
-          </div>
-        }
       />
 
       <section className="section contact-section">

@@ -3,6 +3,7 @@ import { t } from '../i18n'
 import { PageHero } from '../components/PageHero'
 import { PageMeta } from '../components/PageMeta'
 import { Reveal } from '../components/Reveal'
+import { RichText } from '../components/RichText'
 
 export default function Appointments() {
   return (
@@ -20,21 +21,11 @@ export default function Appointments() {
           </>
         }
         description={t('appointments.hero.description')}
-        aside={
-          <div className="page-hero__marker" aria-hidden="true">
-            <span>{t('appointments.hero.marker.number')}</span>
-            <i />
-            <span>{t('appointments.hero.marker.label')}</span>
-          </div>
-        }
       />
 
       <section className="section booking-section">
         <div className="container booking-layout">
           <Reveal className="booking-card">
-            <span className="booking-card__status">
-              {t('appointments.booking.status')}
-            </span>
             <h2>{t('appointments.booking.title')}</h2>
             <p>{t('appointments.booking.text')}</p>
             {site.bookingUrl ? (
@@ -60,7 +51,9 @@ export default function Appointments() {
           <Reveal className="booking-alternative" delay={90}>
             <p className="section-index">{t('appointments.alternative.index')}</p>
             <h2>{t('appointments.alternative.title')}</h2>
-            <p>{t('appointments.alternative.text')}</p>
+            <p>
+              <RichText parts={t('appointments.alternative.text')} />
+            </p>
             <a className="contact-tile" href={site.contact.phoneHref}>
               <span>{t('common.telefon')}</span>
               <strong>{site.contact.phoneDisplay}</strong>

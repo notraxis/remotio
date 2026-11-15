@@ -31,6 +31,12 @@ type LegalSection = {
 /** Beschriftung/Wert-Paar, z. B. der Anbieterkennzeichnung. */
 type DetailRow = readonly [string, string]
 
+/** Fließtext-Baustein mit optionaler Hervorhebung. */
+type RichTextPart = string | { readonly strong: string }
+
+/** Absatz aus Textbausteinen, z. B. mit fettgedruckten Passagen. */
+type RichText = readonly RichTextPart[]
+
 export type {
   CopyPath,
   CopyValue,
@@ -38,4 +44,6 @@ export type {
   LegalParagraph,
   LegalSection,
   DetailRow,
+  RichTextPart,
+  RichText,
 }

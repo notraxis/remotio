@@ -10,7 +10,9 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, title, description, aside }: PageHeroProps) {
   return (
     <section className="page-hero">
-      <div className="container page-hero__grid">
+      <div
+        className={`container page-hero__grid${aside ? '' : ' page-hero__grid--solo'}`}
+      >
         <div className="page-hero__content">
           <p className="eyebrow">{eyebrow}</p>
           <h1>{title}</h1>

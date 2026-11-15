@@ -20,16 +20,14 @@ export default function Home() {
             {t('home.hero.title')}
             <span>{t('home.hero.titleAccent')}</span>
           </h1>
-          <p className="home-hero__name">
-            <span className="home-hero__wordmark">
-              <span className="home-hero__wordmark-accent">
+          <p className="home-hero__meaning">
+            <span className="home-hero__meaning-name">
+              <span className="home-hero__meaning-accent">
                 {t('home.hero.meaning.nameAccent')}
               </span>
               {t('home.hero.meaning.name')}
-            </span>
-            <span className="home-hero__definition">
-              {t('home.hero.meaning.definition')}
-            </span>
+            </span>{' '}
+            {t('home.hero.meaning.definition')}
           </p>
           <p className="home-hero__goal">{t('home.hero.goal')}</p>
           <div className="button-row">

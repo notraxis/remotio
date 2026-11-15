@@ -8,6 +8,8 @@ export type {
   LegalParagraph,
   LegalSection,
   DetailRow,
+  RichTextPart,
+  RichText,
 } from './types'
 
 const placeholderPattern = /\{(\w+)\}/g

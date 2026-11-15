@@ -23,13 +23,6 @@ export default function Services() {
           </>
         }
         description={t('services.hero.description')}
-        aside={
-          <div className="page-hero__marker" aria-hidden="true">
-            <span>{t('services.hero.marker.number')}</span>
-            <i />
-            <span>{t('services.hero.marker.label')}</span>
-          </div>
-        }
       />
 
       <section className="section service-list-section">
