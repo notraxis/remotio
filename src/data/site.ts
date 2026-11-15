@@ -3,7 +3,7 @@ export const site = {
   contact: {
     email: 'info@remotio-physio.de',
     phoneDisplay: '+49 9631 7259432',
-    phoneHref: 'tel:+491234567890',
+    phoneHref: 'tel:+4996317259432',
     street: 'Maximilianplatz 31',
     postalCode: '95643',
     city: 'Tirschenreuth',

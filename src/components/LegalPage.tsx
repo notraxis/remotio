@@ -3,10 +3,17 @@ import { t } from '../i18n'
 import type { DetailRow, LegalPart, LegalSection } from '../i18n'
 import { PageMeta } from './PageMeta'
 
+type LegalSidebar = {
+  label: string
+  title: string
+  text: string
+}
+
 type LegalPageProps = {
   title: string
   description: string
   updated: string
+  sidebar?: LegalSidebar
   details?: {
     heading: string
     rows: readonly DetailRow[]
@@ -34,9 +41,16 @@ export function LegalPage({
   title,
   description,
   updated,
+  sidebar,
   details,
   sections,
 }: LegalPageProps) {
+  const sidebarContent = sidebar ?? {
+    label: t('legal.sidebar.label'),
+    title: t('legal.sidebar.title'),
+    text: t('legal.sidebar.text'),
+  }
+
   return (
     <>
       <PageMeta title={title} description={description} />
@@ -52,9 +66,9 @@ export function LegalPage({
       </header>
       <div className="container legal-layout">
         <aside className="legal-sidebar">
-          <p>{t('legal.sidebar.label')}</p>
-          <strong>{t('legal.sidebar.title')}</strong>
-          <span>{t('legal.sidebar.text')}</span>
+          <p>{sidebarContent.label}</p>
+          <strong>{sidebarContent.title}</strong>
+          <span>{sidebarContent.text}</span>
         </aside>
         <article className="legal-content">
           {details ? (
@@ -64,7 +78,9 @@ export function LegalPage({
                 {details.rows.map(([label, value]) => (
                   <div key={label}>
                     <strong>{label}</strong>
-                    <span className="legal-placeholder">{value}</span>
+                    <span className={value.startsWith('[') ? 'legal-placeholder' : undefined}>
+                      {value}
+                    </span>
                   </div>
                 ))}
               </div>
