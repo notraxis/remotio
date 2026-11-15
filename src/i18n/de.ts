@@ -8,6 +8,8 @@
  * - Werte, die keine Texte sind (Telefonnummer, Adresse, bookingUrl), stehen
  *   weiterhin in src/data/site.ts.
  */
+import { site } from '../data/site'
+
 export const de = {
   common: {
     termin: 'Termin buchen',
@@ -328,30 +330,95 @@ export const de = {
         description:
           'Anbieterkennzeichnung und rechtliche Hinweise für die Website der Physiotherapiepraxis re:motio.',
       },
-      updated: '25. September 2026',
+      updated: 'Oktober 2026',
+      sidebar: {
+        label: 'Anbieterkennzeichnung',
+        title: 're:motio – Physiotherapie',
+        text: `Jörg Kraus · ${site.contact.street} · ${site.contact.postalCode} ${site.contact.city}`,
+      },
       details: {
-        heading: 'Angaben gemäß § 5 DDG',
+        heading: 'Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)',
         rows: [
-          ['Diensteanbieter', '[Vor- und Nachname oder Firma der Praxisinhaberin / des Praxisinhabers]'],
-          ['Anschrift', '[Ladungsfähige Straße, Hausnummer, PLZ und Ort]'],
-          ['Telefon', '[Telefonnummer]'],
-          ['E-Mail', '[E-Mail-Adresse]'],
-          ['Berufsbezeichnung', '[Berufsbezeichnung und staatliche Verleihung, sofern zutreffend]'],
-          ['Zuständige Kammer', '[Name der Kammer, zuständige Stelle und Anschrift]'],
-          ['Berufsrechtliche Regelungen', '[Verwendete Regelungen mit Fundstelle]'],
-          ['Berufshaftpflichtversicherung', '[Versicherer, Anschrift und räumlicher Geltungsbereich]'],
-          ['Umsatzsteuer-Identifikationsnummer', '[USt-IdNr., sofern vorhanden]'],
-          ['Wirtschafts-Identifikationsnummer', '[W-IdNr., sofern vorhanden]'],
+          ['Praxisanschrift / Diensteanbieter', 're:motio – Physiotherapie'],
+          ['Inhaber', 'Jörg Kraus'],
+          [
+            'Anschrift',
+            `${site.contact.street}, ${site.contact.postalCode} ${site.contact.city}, Deutschland`,
+          ],
+          ['Telefon', site.contact.phoneDisplay],
+          ['E-Mail', site.contact.email],
         ],
       },
       sections: [
         {
-          heading: 'Redaktionell verantwortlich',
+          heading: 'Gesetzliche Berufsbezeichnung',
+          body: [
+            ['Physiotherapeut (verliehen in der Bundesrepublik Deutschland)'],
+            ['Erlaubnis erteilt am 06.12.2011'],
+            ['Erlaubniserteilende Behörde: Kommunaler Sozialverband Sachsen, Leipzig'],
+          ],
+        },
+        {
+          heading: 'Zuständige Aufsichtsbehörde',
+          body: [
+            ['Landratsamt Tirschenreuth – Staatliches Gesundheitsamt'],
+            ['St.-Peter-Straße 33'],
+            ['95643 Tirschenreuth'],
+            [
+              {
+                placeholder:
+                  'Behördenanschrift vor Veröffentlichung nochmals prüfen.',
+              },
+            ],
+          ],
+        },
+        {
+          heading: 'Berufsrechtliche Regelungen',
           body: [
             [
-              'Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV ist',
-              { placeholder: ' [Name und ladungsfähige Anschrift]' },
-              '.',
+              'Gesetz über die Berufe in der Physiotherapie (Masseur- und Physiotherapeutengesetz – MPhG):',
+            ],
+            ['https://www.gesetze-im-internet.de/mphg/'],
+            [
+              'Ausbildungs- und Prüfungsverordnung für Physiotherapeuten (PhysTh-APrV):',
+            ],
+            ['https://www.gesetze-im-internet.de/physth-aprv/'],
+          ],
+        },
+        {
+          heading: 'Angaben zur Berufshaftpflichtversicherung',
+          body: [
+            [{ placeholder: 'Versicherungsunternehmen: [Name ergänzen]' }],
+            [{ placeholder: 'Anschrift des Versicherers: [Anschrift ergänzen]' }],
+            [
+              {
+                placeholder:
+                  'Räumlicher Geltungsbereich: [laut Versicherungsvertrag ergänzen]',
+              },
+            ],
+          ],
+        },
+        {
+          heading: 'Umsatzsteuer',
+          body: [
+            [
+              'Eine Umsatzsteuer-Identifikationsnummer ist nicht vorhanden. Medizinisch indizierte physiotherapeutische Heilbehandlungen können nach § 4 Nr. 14 Buchst. a UStG umsatzsteuerfrei sein. Für andere Leistungen kann eine andere steuerliche Behandlung gelten.',
+            ],
+          ],
+        },
+        {
+          heading: 'Heilversprechen / Heilmittelwerbegesetz',
+          body: [
+            [
+              'Die Informationen auf dieser Website dienen der allgemeinen Information über physiotherapeutische Leistungen. Es werden keine bestimmten Behandlungserfolge oder Heilungen garantiert. Die Informationen ersetzen keine individuelle medizinische Untersuchung oder Beratung.',
+            ],
+          ],
+        },
+        {
+          heading: 'Urheberrecht und Bildnachweise',
+          body: [
+            [
+              'Die Inhalte dieser Website, insbesondere Texte, Fotografien und Grafiken, sind im Rahmen der geltenden gesetzlichen Bestimmungen geschützt. Eine Nutzung bedarf, soweit gesetzlich erforderlich, der Zustimmung der jeweiligen Rechteinhaber. Erforderliche Bildnachweise werden am Bild oder an geeigneter Stelle angegeben.',
             ],
           ],
         },
@@ -359,37 +426,27 @@ export const de = {
           heading: 'Verbraucherstreitbeilegung',
           body: [
             [
-              'Die Anwendbarkeit des Verbraucherstreitbeilegungsgesetzes und eine gegebenenfalls erforderliche Erklärung sind anhand der finalen Unternehmensform und der Tätigkeit der Praxis rechtlich zu prüfen.',
+              'Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
             ],
           ],
         },
         {
-          heading: 'Haftung für Inhalte',
+          heading:
+            'Verantwortlich für journalistisch-redaktionelle Inhalte (soweit vorhanden)',
           body: [
-            [
-              'Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 7 bis 10 DDG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.',
-            ],
-            [
-              'Die Inhalte dieser Website dienen der allgemeinen Information. Sie ersetzen keine persönliche Beratung, Diagnose oder ärztliche beziehungsweise therapeutische Behandlung.',
-            ],
+            ['Jörg Kraus'],
+            [site.contact.street],
+            [`${site.contact.postalCode} ${site.contact.city}`],
           ],
         },
         {
-          heading: 'Haftung für Links',
+          heading: 'Hinweis vor Veröffentlichung',
           body: [
             [
-              'Dieses Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte und die Datenschutzpraxis verlinkter Anbieter ist ausschließlich der jeweils verantwortliche Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden entsprechende Links umgehend entfernt.',
-            ],
-          ],
-        },
-        {
-          heading: 'Urheberrecht und Bildmaterial',
-          body: [
-            [
-              'Die durch die Betreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Durch die Vervielfältigung, Verbreitung und Verwertung außerhalb der Grenzen des Urheberrechts bedarf es der schriftlichen Zustimmung der jeweils berechtigten Person oder des Anbieters.',
-            ],
-            [
-              'Für eingesetzte Fotos, Videos und Logos müssen passende Nutzungsrechte bestehen und entsprechende Bildnachweise vorliegen.',
+              {
+                placeholder:
+                  'Versicherer und Geltungsbereich vervollständigen; Aufsichtsbehörde und individuelle Pflichtangaben prüfen. Eine Berufsverbandsmitgliedschaft oder Heilpraktikererlaubnis wurde nicht unterstellt.',
+              },
             ],
           ],
         },
@@ -397,109 +454,231 @@ export const de = {
     },
     privacy: {
       meta: {
-        title: 'Datenschutz',
+        title: 'Datenschutzerklärung',
         description:
           'Informationen zur Verarbeitung personenbezogener Daten beim Besuch der Website und bei der Kontaktaufnahme mit re:motio.',
       },
-      updated: '25. September 2026',
+      updated: 'Oktober 2026',
       sections: [
         {
-          heading: '1. Verantwortlicher',
+          heading: '1. Allgemeine Hinweise',
           body: [
             [
-              'Verantwortlich für die Datenverarbeitung auf dieser Website ist',
-              { placeholder: ' [Name, Anschrift und Kontaktdaten der Praxis]' },
-              '. Die abschließenden Angaben sind vor Veröffentlichung zu ergänzen.',
+              'Diese Datenschutzerklärung informiert über die Verarbeitung personenbezogener Daten beim Besuch unserer Website. Personenbezogene Daten sind Informationen, die sich auf eine identifizierte oder identifizierbare Person beziehen. Die Erklärung ist auf die Website bezogen; für die Verarbeitung von Patientendaten in der Praxis können ergänzende Datenschutzhinweise erforderlich sein.',
             ],
           ],
         },
         {
-          heading: '2. Besonders sensible Daten',
+          heading: '2. Verantwortlicher',
           body: [
+            ['Diensteanbieter: re:motio – Physiotherapie'],
+            ['Inhaber: Jörg Kraus'],
             [
-              'Die Website enthält bewusst kein Kontaktformular und keine Eingabemöglichkeit für Gesundheitsdaten. Bitte senden Sie über E-Mail keine Diagnosen, Befunde oder besonders sensible Gesundheitsinformationen, sofern dies nicht für eine konkrete Terminorganisation erforderlich ist. Für eine sichere Übermittlung kann ein gesicherter Kanal der Praxis vereinbart werden.',
+              `Anschrift: ${site.contact.street}, ${site.contact.postalCode} ${site.contact.city}, Deutschland`,
+            ],
+            [`Telefon: ${site.contact.phoneDisplay}`],
+            [`E-Mail: ${site.contact.email}`],
+            [
+              'Für Datenschutzanfragen und die Ausübung Ihrer Rechte verwenden Sie bitte die vorstehenden Kontaktdaten.',
             ],
           ],
         },
         {
-          heading: '3. Aufruf der Website',
+          heading: '3. Hosting',
           body: [
             [
-              'Beim Aufruf dieser Website übermittelt Ihr Browser technisch notwendige Daten an den Hosting-Anbieter. Dazu können insbesondere Ihre aufgerufene Seite, Datum und Uhrzeit, übertragene Datenmenge, Meldung über erfolgreichen Abruf, Browsertyp und Browserversion sowie Betriebssystem gehören.',
+              'Unsere Website wird nach derzeitiger Planung bei DomainFactory GmbH, c/o WeWork, Neuturmstraße 5, 80331 München, betrieben. Hierbei werden technisch notwendige Zugriffsdaten verarbeitet. Zweck ist die sichere, zuverlässige Bereitstellung der Website; Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Soweit DomainFactory als Auftragsverarbeiter tätig wird, ist eine Vereinbarung nach Art. 28 DSGVO erforderlich.',
             ],
-            [
-              'Die Verarbeitung erfolgt zur sicheren und fehlerfreien Bereitstellung der Website auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Die Verantwortlichkeit, Aufbewahrungsfrist und gegebenenfalls eingesetzte Auftragsverarbeitung sind mit dem endgültigen Hosting-Anbieter zu dokumentieren.',
-            ],
+            ['Weitere Informationen: https://www.df.eu/de/datenschutz/'],
             [
               {
                 placeholder:
-                  '[Name, Adresse und Kontaktdaten des Hosting-Anbieters ergänzen]',
+                  'Anbieterangaben und Vertragsstatus sind vor Veröffentlichung zu prüfen.',
               },
             ],
           ],
         },
         {
-          heading: '4. Kontaktaufnahme',
+          heading: '4. Server-Logfiles',
           body: [
             [
-              'Wenn Sie uns per Telefon oder E-Mail kontaktieren, werden die von Ihnen mitgeteilten Daten zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen verarbeitet. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung, soweit erforderlich, oder zur Erfüllung eines Vertrags beziehungsweise vorvertraglicher Maßnahmen nach Art. 6 Abs. 1 lit. a beziehungsweise lit. b DSGVO. Unsere Aufbewahrungsfristen richten sich nach den gesetzlichen Vorgaben und den berufs- und vertragsrechtlichen Erfordernissen.',
-            ],
-          ],
-        },
-        {
-          heading: '5. Buchungssoftware',
-          body: [
-            [
-              'Die Website verlinkt auf eine externe Buchungssoftware. Beim Öffnen der verlinkten Plattform gelten deren Datenschutzhinweise und die Verantwortlichkeit des jeweiligen Anbieters. Welche Daten beim Buchungsvorgang verarbeitet werden, hängt vom endgültigen Anbieter und dem gewählten Buchungsprozess ab.',
+              'Beim Zugriff können IP-Adresse, Datum und Uhrzeit, Browsertyp und -version, Betriebssystem, aufgerufene Seiten und Dateien, Referrer-URL (sofern übermittelt), Zugriffsstatus sowie übertragene Datenmenge protokolliert werden. Der Hostname ist nur aufzunehmen, falls er tatsächlich erfasst wird. Zwecke: Betrieb, Fehleranalyse und IT-Sicherheit. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.',
             ],
             [
               {
                 placeholder:
-                  '[Anbieter, URL, Zweck der Übermittlung und gegebenenfalls Rechtsgrundlage ergänzen]',
+                  'Tatsächlich erfasste Felder und Löschfristen sind noch anhand der Hosting-Einstellungen zu ergänzen.',
               },
             ],
           ],
         },
         {
-          heading: '6. Cookies und lokale Speicherung',
+          heading: '5. Verschlüsselte Übertragung',
           body: [
             [
-              'Für den aktuellen Stand setzt diese Website keine nicht technisch notwendigen Cookies, kein Tracking und keine Analyse- oder Werbetechnologien. Die Schrift Source Sans 3 wird lokal ausgeliefert; es findet keine Verbindung zu einem externen Schrift-Dienst statt.',
+              'Die Website soll über HTTPS mit TLS-Verschlüsselung bereitgestellt werden.',
             ],
             [
-              'Sollten später Analyse-, Kartendienste, eingebettete Buchungsfunktionen oder nicht notwendige Speicherungen ergänzt werden, ist vorher eine informierte Einwilligungslösung nach den geltenden Datenschutzregeln umzusetzen.',
-            ],
-          ],
-        },
-        {
-          heading: '7. Externe Inhalte und Medien',
-          body: [
-            [
-              'Aktuell sind keine externen Karten, Videos, Social-Media-Widgets oder Schriftbibliotheken eingebunden. Bei späteren Einbettungen oder automatischen Uploads von Inhalten Dritter können Daten an deren Server übermittelt werden. Die Datenschutzerklärung ist entsprechend anzupassen.',
+              {
+                placeholder:
+                  'Die korrekte Einrichtung muss vor Veröffentlichung technisch überprüft werden.',
+              },
             ],
           ],
         },
         {
-          heading: '8. Ihre Rechte',
+          heading: '6. Kontaktaufnahme',
           body: [
             [
-              'Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Sofern eine Einwilligung erteilt wurde, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen. Eine kurze Nachricht an die Praxis genügt zur Ausübung der Rechte, soweit keine gesetzlichen Ausnahmen entgegenstehen.',
+              'Bei einer Kontaktaufnahme per Telefon oder E-Mail verarbeiten wir die übermittelten Kontaktdaten und den Inhalt Ihrer Anfrage zur Bearbeitung und gegebenenfalls zur Vorbereitung eines Behandlungsvertrags. Rechtsgrundlagen sind je nach Anfrage Art. 6 Abs. 1 lit. b oder f DSGVO. Für Gesundheitsdaten ist zusätzlich eine Ausnahme nach Art. 9 Abs. 2 DSGVO erforderlich, insbesondere lit. h, soweit deren Voraussetzungen erfüllt sind. Daten werden nach Wegfall des Zwecks gelöscht, soweit keine Aufbewahrungspflichten bestehen. Bitte senden Sie sensible Gesundheitsdaten möglichst nicht unverschlüsselt per E-Mail.',
             ],
           ],
         },
         {
-          heading: '9. Beschwerderecht',
+          heading: '7. Online-Terminbuchung über Thevea',
           body: [
             [
-              'Sie haben das Recht, sich bei einer Datenschutzaufsichtsbeschwerde zu beschweren, insbesondere in einer Aufsichtsbehörde Ihres Aufenthaltsorts oder Arbeitsplatzes. Die zuständige Stelle ist anhand des endgültigen Praxisorts zu ergänzen.',
+              'Geplant ist ein externer Link zur Terminbuchung über Thevea. Beim Anklicken des Links verlassen Sie unsere Website; auf der Zielseite gelten die dortigen Datenschutzinformationen. Für die Verarbeitung von Termin- und gegebenenfalls Gesundheitsdaten im Rahmen der Behandlung kommen Art. 6 Abs. 1 lit. b und Art. 9 Abs. 2 lit. h DSGVO in Betracht, soweit die Voraussetzungen vorliegen.',
+            ],
+            [
+              {
+                placeholder:
+                  'Konkreter Betreiber, Datenempfänger, Vertragsgestaltung, Speicherdauer und technische Einbindung sind vor Veröffentlichung zu prüfen und zu ergänzen.',
+              },
             ],
           ],
         },
         {
-          heading: '10. Aktualität',
+          heading: '8. Cookies und ähnliche Technologien',
           body: [
             [
-              'Diese Datenschutzerklärung wird angepasst, sobald Inhalte, Anbieter oder rechtliche Anforderungen geändert werden. Die jeweils aktuelle Fassung ist an dieser Stelle abrufbar.',
+              'Technisch notwendige Technologien können für den Betrieb der Website eingesetzt werden. Soweit ein Zugriff auf Informationen im Endgerät unbedingt erforderlich ist, kann § 25 Abs. 2 TDDDG einschlägig sein. Für nicht notwendige Cookies oder Analyse- und Marketingtechnologien ist grundsätzlich vorab eine Einwilligung erforderlich (§ 25 Abs. 1 TDDDG und, soweit personenbezogene Daten verarbeitet werden, Art. 6 Abs. 1 lit. a DSGVO). Einwilligungen müssen widerrufbar sein.',
+            ],
+            [
+              {
+                placeholder:
+                  'Konkrete Dienste, Zwecke, Laufzeiten und Widerrufsweg werden nach Festlegung der Website-Technik ergänzt.',
+              },
+            ],
+          ],
+        },
+        {
+          heading: '9. Externe Links und weitere Dienste',
+          body: [
+            [
+              'Unsere Website kann auf externe Seiten verlinken. Nach dem Aufruf der Zielseite gelten deren Datenschutzinformationen. Derzeit sind kein Kontaktformular und keine eingebettete Google-Maps-Karte vorgesehen.',
+            ],
+            [
+              {
+                placeholder:
+                  'Ob externe Schriftarten, Videos, Social-Media-Einbindungen oder sonstige Drittanbieterdienste eingesetzt werden, muss vor Veröffentlichung geprüft werden; bei Einsatz sind entsprechende Angaben zu ergänzen.',
+              },
+            ],
+          ],
+        },
+        {
+          heading: '10. Empfänger und Weitergabe',
+          body: [
+            [
+              'Personenbezogene Daten werden nur auf geeigneter Rechtsgrundlage weitergegeben, etwa an technische Dienstleister, soweit dies für Websitebetrieb oder Anfragen erforderlich ist. Für Auftragsverarbeitung werden erforderliche Verträge nach Art. 28 DSGVO geschlossen.',
+            ],
+            [
+              {
+                placeholder:
+                  'Konkrete Empfänger beziehungsweise Empfängerkategorien sind nach der technischen Einrichtung zu überprüfen.',
+              },
+            ],
+          ],
+        },
+        {
+          heading: '11. Übermittlungen in Drittländer',
+          body: [
+            [
+              'Ob Daten außerhalb der EU beziehungsweise des EWR verarbeitet werden, hängt von den tatsächlich eingesetzten Dienstleistern ab. Falls dies geschieht, werden die betroffenen Dienste, die einschlägige Rechtsgrundlage und die vorgesehenen Garantien beziehungsweise Angemessenheitsbeschlüsse hier ergänzt.',
+            ],
+            ['Derzeit ist eine abschließende Aussage nicht möglich.'],
+          ],
+        },
+        {
+          heading: '12. Speicherdauer',
+          body: [
+            [
+              'Wir speichern personenbezogene Daten nur so lange, wie dies für den jeweiligen Zweck erforderlich ist, sofern keine gesetzlichen Aufbewahrungspflichten oder andere rechtmäßige Gründe eine längere Speicherung verlangen.',
+            ],
+            [
+              {
+                placeholder:
+                  'Konkrete Löschfristen beziehungsweise Kriterien für deren Festlegung sind je Verarbeitungsvorgang zu ergänzen, soweit bekannt.',
+              },
+            ],
+          ],
+        },
+        {
+          heading: '13. Rechte betroffener Personen',
+          body: [
+            [
+              'Sie haben nach den gesetzlichen Voraussetzungen Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO). Eine erteilte Einwilligung können Sie nach Art. 7 Abs. 3 DSGVO jederzeit mit Wirkung für die Zukunft widerrufen. Zur Ausübung dieser Rechte wenden Sie sich an die Kontaktdaten unter Ziffer 2. Ihnen steht außerdem ein Beschwerderecht nach Art. 77 DSGVO zu.',
+            ],
+          ],
+        },
+        {
+          heading: '14. Pflicht zur Bereitstellung von Daten',
+          body: [
+            [
+              'Für den bloßen Besuch der Website besteht grundsätzlich keine gesetzliche Pflicht, uns freiwillig zusätzliche personenbezogene Daten bereitzustellen. Technisch erforderliche Verbindungsdaten fallen beim Websiteaufruf jedoch automatisch an; ohne sie ist die Bereitstellung der Website nicht möglich. Bei Termin- oder Behandlungsanfragen können bestimmte Angaben zur Bearbeitung und Durchführung erforderlich sein.',
+            ],
+            [
+              {
+                placeholder:
+                  'Die genauen Pflichtfelder der externen Terminbuchung sind noch zu prüfen.',
+              },
+            ],
+          ],
+        },
+        {
+          heading: '15. Automatisierte Entscheidungen',
+          body: [
+            [
+              'Nach derzeitiger Planung erfolgen im Rahmen des Websitebesuchs keine ausschließlich automatisierten Entscheidungen einschließlich Profiling mit rechtlicher oder ähnlich erheblicher Wirkung im Sinne von Art. 22 DSGVO.',
+            ],
+            [
+              {
+                placeholder:
+                  'Diese Angabe ist vor Veröffentlichung anhand der tatsächlich eingesetzten Dienste zu bestätigen.',
+              },
+            ],
+          ],
+        },
+        {
+          heading: '16. Beschwerderecht bei der Aufsichtsbehörde',
+          body: [
+            [
+              'Sie können sich gemäß Art. 77 DSGVO bei einer Datenschutzaufsichtsbehörde beschweren. Für die privat betriebene Praxis ist insbesondere das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, zuständig. Website: https://www.lda.bayern.de.',
+            ],
+          ],
+        },
+        {
+          heading: '17. Aktualisierung',
+          body: [
+            [
+              'Diese Datenschutzerklärung wird angepasst, wenn sich rechtliche Anforderungen oder die tatsächlichen Datenverarbeitungen unserer Website ändern.',
+            ],
+          ],
+        },
+        {
+          heading: 'Vor Veröffentlichung noch zu klären',
+          body: [
+            [
+              {
+                placeholder:
+                  'DomainFactory-Vertrags- und Logdaten einschließlich Speicherfristen; Thevea-Betreiber und Datenflüsse; Cookie-/Tracking-Konfiguration und Widerruf; externe Schriftarten, Videos und sonstige Dienste; etwaige Drittlandübermittlungen; technische HTTPS-Einrichtung; Richtigkeit der Aussagen zu automatisierten Entscheidungen.',
+              },
+            ],
+            [
+              {
+                placeholder:
+                  'Dieser Entwurf ist noch nicht veröffentlichungsfertig.',
+              },
             ],
           ],
         },
