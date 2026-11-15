@@ -123,6 +123,18 @@ function Footer() {
             <br />
             {site.contact.postalCode} {site.contact.city}
           </p>
+          <p className="site-footer__label site-footer__label--social">
+            {t('footer.socialLabel')}
+          </p>
+          <a
+            href={site.social.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('a11y.instagram', { name: site.name })}
+          >
+            {site.social.instagram.handle}{' '}
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
       <div className="container site-footer__bottom">

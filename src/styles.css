@@ -432,6 +432,10 @@ h3 {
   margin-bottom: 1.1rem;
 }
 
+.site-footer__label--social {
+  margin-top: 1.4rem;
+}
+
 .site-footer__nav,
 .site-footer__contact {
   display: flex;

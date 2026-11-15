@@ -17,4 +17,10 @@ export const site = {
     { days: 'Samstag & Sonntag', time: 'geschlossen' },
   ],
   bookingUrl: '',
+  social: {
+    instagram: {
+      url: 'https://instagram.com/remotiophysiotherapie',
+      handle: '@remotiophysiotherapie',
+    },
+  },
 } as const

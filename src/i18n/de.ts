@@ -40,6 +40,7 @@ export const de = {
     menuOpen: 'Menü',
     menuClose: 'Schließen',
     navMeta: 'Persönlich. Klar. In Bewegung.',
+    instagram: '{name} auf Instagram',
   },
 
   media: {
@@ -311,6 +312,7 @@ export const de = {
     claim: 'Bewegung ist Ihre Stärke. Wir bringen sie zurück.',
     navLabel: 'Entdecken',
     contactLabel: 'Kontakt',
+    socialLabel: 'Folgen',
     imprint: 'Impressum',
     privacy: 'Datenschutz',
     toTop: 'Nach oben ↑',
