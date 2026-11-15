@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { navigation, site } from '../data/site'
+import { site } from '../data/site'
+import { t } from '../i18n'
 
 function Brand() {
   return (
-    <Link className="brand" to="/" aria-label={`${site.name} Startseite`}>
+    <Link className="brand" to="/" aria-label={t('a11y.brandHome', { name: site.name })}>
       <img
         src="/logo_transparent.png"
         width="2170"
         height="725"
-        alt={`${site.name} Physiotherapie`}
+        alt={t('a11y.brandAlt', { name: site.name })}
       />
     </Link>
   )
@@ -33,6 +34,7 @@ function Header() {
   }, [menuOpen])
 
   const closeMenu = () => setMenuOpen(false)
+  const navigation = t('nav')
 
   return (
     <header className={`site-header ${menuOpen ? 'is-open' : ''}`}>
@@ -45,7 +47,7 @@ function Header() {
           aria-controls="main-navigation"
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <span>{menuOpen ? 'Schließen' : 'Menü'}</span>
+          <span>{menuOpen ? t('a11y.menuClose') : t('a11y.menuOpen')}</span>
           <span className="menu-toggle__icon" aria-hidden="true">
             <i />
             <i />
@@ -54,7 +56,7 @@ function Header() {
         <nav
           id="main-navigation"
           className="main-navigation"
-          aria-label="Hauptnavigation"
+          aria-label={t('a11y.mainNavigation')}
         >
           <div className="main-navigation__links">
             {navigation.map((item) => (
@@ -76,12 +78,10 @@ function Header() {
             to="/termine"
             onClick={closeMenu}
           >
-            Termin buchen
+            {t('common.termin')}
             <span aria-hidden="true">↗</span>
           </Link>
-          <p className="main-navigation__meta">
-            Persönlich. Klar. In Bewegung.
-          </p>
+          <p className="main-navigation__meta">{t('a11y.navMeta')}</p>
         </nav>
       </div>
     </header>
@@ -90,6 +90,7 @@ function Header() {
 
 function Footer() {
   const year = new Date().getFullYear()
+  const navigation = t('nav')
 
   return (
     <footer className="site-footer">
@@ -102,19 +103,19 @@ function Footer() {
             height="725"
             alt={site.name}
           />
-          <p>{site.claim}</p>
+          <p>{t('footer.claim')}</p>
         </div>
         <div className="site-footer__nav">
-          <p className="site-footer__label">Entdecken</p>
+          <p className="site-footer__label">{t('footer.navLabel')}</p>
           {navigation.map((item) => (
             <Link key={item.path} to={item.path}>
               {item.label}
             </Link>
           ))}
-          <Link to="/termine">Termin buchen</Link>
+          <Link to="/termine">{t('common.termin')}</Link>
         </div>
         <div className="site-footer__contact">
-          <p className="site-footer__label">Kontakt</p>
+          <p className="site-footer__label">{t('footer.contactLabel')}</p>
           <a href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>
           <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
           <p>
@@ -125,12 +126,14 @@ function Footer() {
         </div>
       </div>
       <div className="container site-footer__bottom">
-        <p>© {year} {site.name}</p>
+        <p>
+          © {year} {site.name}
+        </p>
         <div>
-          <Link to="/impressum">Impressum</Link>
-          <Link to="/datenschutz">Datenschutz</Link>
+          <Link to="/impressum">{t('footer.imprint')}</Link>
+          <Link to="/datenschutz">{t('footer.privacy')}</Link>
         </div>
-        <a href="#main-content">Nach oben ↑</a>
+        <a href="#main-content">{t('footer.toTop')}</a>
       </div>
     </footer>
   )
@@ -150,7 +153,7 @@ export function Layout() {
   return (
     <>
       <a className="skip-link" href="#main-content">
-        Zum Inhalt springen
+        {t('a11y.skipLink')}
       </a>
       <ScrollToTop />
       <Header />

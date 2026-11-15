@@ -1,127 +1,88 @@
 import { Link } from 'react-router-dom'
+import { site } from '../data/site'
+import { t } from '../i18n'
 import { MediaPlaceholder } from '../components/MediaPlaceholder'
 import { PageHero } from '../components/PageHero'
 import { PageMeta } from '../components/PageMeta'
 import { Reveal } from '../components/Reveal'
-import { practiceValues, team } from '../data/site'
+import { RichText } from '../components/RichText'
 
 export default function Practice() {
+  const team = t('team.members')
+
   return (
     <>
       <PageMeta
-        title="Die Praxis"
-        description="Lerne die Physiotherapiepraxis re:motio, unser Team und unsere Werte für eine persönliche, verständliche Behandlung kennen."
+        title={t('practice.meta.title')}
+        description={t('practice.meta.description')}
       />
       <PageHero
-        eyebrow="Die Praxis"
+        eyebrow={t('practice.hero.eyebrow')}
         title={
           <>
-            Hier bist du kein <span>Fall.</span>
+            {t('practice.hero.title')}{' '}
+            <span>{t('practice.hero.titleAccent')}</span>
           </>
         }
-        description="Wir glauben an gute Behandlung, die den Menschen in den Mittelpunkt stellt: aufmerksam, alltagsnah und auf Augenhöhe."
-        aside={
-          <div className="page-hero__marker" aria-hidden="true">
-            <span>01</span>
-            <i />
-            <span>Praxis</span>
-          </div>
-        }
+        description={t('practice.hero.description')}
       />
 
-      <section className="section section--story">
-        <div className="container split-intro">
-          <Reveal>
-            <p className="section-index">01 — Unsere Idee</p>
-          </Reveal>
-          <Reveal delay={80}>
-            <h2>Physiotherapie, die nicht bei der Tür endet.</h2>
-            <p className="lead">
-              Eine Behandlung ist dann nachhaltig, wenn sie nicht nur im
-              Behandlungsraum funktioniert. Deshalb verbinden wir professionelle
-              Therapie mit verständlicher Kommunikation und Übungen, die zu deinem
-              echten Alltag passen.
-            </p>
-            <p>
-              Unser Anspruch ist bewusst einfach: gut zuhören, sorgfältig
-              untersuchen, transparent erklären und gemeinsam ein realistisches
-              Ziel verfolgen. So entsteht Vertrauen – und mit jedem Termin ein
-              klarer nächster Schritt.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section section--media">
-        <div className="container media-story">
-          <Reveal className="media-story__visual">
+      <section className="section">
+        <div className="container practice-story">
+          <Reveal className="practice-story__media">
             <MediaPlaceholder
-              label="Behandlungsraum"
-              caption="Heller, ruhiger Raum mit Platz für eine persönliche Behandlung."
+              label={t('media.practice.label')}
+              caption={t('media.practice.caption')}
               variant="practice"
             />
           </Reveal>
-          <div className="media-story__notes">
-            <Reveal delay={100}>
-              <p className="section-index">02 — So fühlt sich die Praxis an</p>
-              <ul className="check-list">
-                <li>Ruhige, konzentrierte Behandlungsräume</li>
-                <li>Zeit für Fragen und gemeinsame Entscheidungen</li>
-                <li>Verständliche Erklärungen ohne Fachjargon</li>
-                <li>Übungen für Zuhause, die in deinen Alltag passen</li>
+          <div className="practice-story__text">
+            <Reveal>
+              <p className="section-index">{t('practice.story.index')}</p>
+            </Reveal>
+            <Reveal delay={70}>
+              <h2>{t('practice.story.title')}</h2>
+              <p>
+                <RichText parts={t('practice.story.audience')} />
+              </p>
+              <p>
+                <RichText parts={t('practice.story.method')} />
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <ul
+                className="chip-list"
+                aria-label={t('practice.story.chipsLabel')}
+              >
+                {t('practice.story.audiences').map((audience) => (
+                  <li key={audience}>{audience}</li>
+                ))}
               </ul>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="statement">{t('practice.story.statement')}</p>
             </Reveal>
           </div>
         </div>
       </section>
 
-      <section className="section section--values">
+      <section className="section section--tint">
         <div className="container">
           <div className="section-heading">
             <div>
-              <p className="section-index">03 — Unsere Werte</p>
-              <h2>Was unsere Arbeit ausmacht.</h2>
+              <p className="section-index">{t('practice.team.index')}</p>
+              <h2>{t('practice.team.title')}</h2>
             </div>
-            <p>
-              Nicht der lauteste Moment zählt, sondern die Summe aus guter
-              Beobachtung, ehrlicher Kommunikation und bestmöglicher Begleitung.
-            </p>
-          </div>
-          <div className="value-grid">
-            {practiceValues.map((value, index) => (
-              <Reveal key={value.title} delay={index * 80}>
-                <article className="value-card">
-                  <span>0{index + 1}</span>
-                  <h3>{value.title}</h3>
-                  <p>{value.text}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--team">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <p className="section-index">04 — Das Team</p>
-              <h2>Menschen, die zuhören.</h2>
-            </div>
-            <p>
-              Namen, Porträts, Qualifikationen und persönliche Schwerpunkte
-              werden nach dem finalen Praxisteam ergänzt.
-            </p>
           </div>
           <div className="team-grid">
             {team.map((person, index) => (
-              <Reveal key={person.name} delay={index * 90}>
+              <Reveal key={person.name} delay={index * 80}>
                 <article className="team-card">
-                  <div className="team-card__portrait" aria-hidden="true">
-                    <span>{person.initials}</span>
-                    <i />
-                  </div>
-                  <div>
+                  <MediaPlaceholder
+                    label={t('media.team.label', { number: index + 1 })}
+                    variant="team"
+                  />
+                  <div className="team-card__info">
                     <p>{person.role}</p>
                     <h3>{person.name}</h3>
                     <span>{person.focus}</span>
@@ -133,22 +94,19 @@ export default function Practice() {
         </div>
       </section>
 
-      <section className="closing-cta closing-cta--compact">
+      <section className="section closing-cta">
         <div className="container closing-cta__inner">
           <Reveal>
-            <p className="eyebrow">Persönlich vorbesprechen</p>
-            <h2>Lass uns über dein Anliegen sprechen.</h2>
-            <p>
-              Du hast Fragen zur Behandlung oder möchtest einen Termin
-              vereinbaren? Melde dich gern direkt bei uns.
-            </p>
+            <p className="eyebrow">{t('practice.cta.eyebrow')}</p>
+            <h2>{t('practice.cta.title')}</h2>
+            <p>{t('practice.cta.text')}</p>
             <div className="button-row">
               <Link className="button button--primary" to="/termine">
-                Termin buchen <span aria-hidden="true">↗</span>
+                {t('common.termin')} <span aria-hidden="true">↗</span>
               </Link>
-              <Link className="text-link" to="/kontakt">
-                Kontakt <span aria-hidden="true">→</span>
-              </Link>
+              <a className="text-link" href={site.contact.phoneHref}>
+                {site.contact.phoneDisplay} <span aria-hidden="true">→</span>
+              </a>
             </div>
           </Reveal>
         </div>

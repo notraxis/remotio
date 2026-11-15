@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { site } from '../data/site'
+import { t } from '../i18n'
 
 type PageMetaProps = {
   title: string
@@ -20,9 +21,12 @@ function setMeta(attribute: 'name' | 'property', key: string, content: string) {
   element.content = content
 }
 
-export function PageMeta({ title, description = site.description }: PageMetaProps) {
+export function PageMeta({
+  title,
+  description = t('meta.fallbackDescription'),
+}: PageMetaProps) {
   useEffect(() => {
-    const pageTitle = `${title} | ${site.name}`
+    const pageTitle = t('meta.titlePattern', { page: title, name: site.name })
     document.title = pageTitle
     setMeta('name', 'description', description)
     setMeta('property', 'og:title', pageTitle)
